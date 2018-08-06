@@ -33,7 +33,7 @@ jQuery('#message-form').on('submit', function (e) {
 			return alert('Geolocation not supported by your broswer.');
 		}
 
-		navigator.geolocation.getCurrentPosition(function(position) {
+		navigator.geolocation.watchPosition(function(position) {
 			console.log(position);
 		}, function () {
 			alert("Unable to fetch position");
