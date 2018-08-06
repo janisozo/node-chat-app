@@ -35,8 +35,6 @@ jQuery('#message-form').on('submit', function (e) {
 
 		navigator.geolocation.watchPosition(function(position) {
 			console.log(position);
-		}, function () {
-			alert("Unable to fetch position");
 		});
 	});
 });
