@@ -17,7 +17,7 @@ function scrollToBottom () {
 
 socket.on('connect', function () {
 	var params = jQuery.deparam(window.location.search);
-
+	
 	socket.emit('join', params, function (err) {
 		if (err) {
 			alert(err);
@@ -26,6 +26,7 @@ socket.on('connect', function () {
 			console.log("No error");
 		}
 	});
+	
 });
 
 socket.on('disconnect', function () {
@@ -34,7 +35,7 @@ socket.on('disconnect', function () {
 	socket.emit('disconnect', params);
 });
 
-socket.on('updateUserList', function(users) {
+socket.on('updateUserList', function (users) {
 	console.log('Users list' , users);
 
 	var ol = jQuery('<ol></ol>');
@@ -89,7 +90,6 @@ jQuery('#message-form').on('submit', function (e) {
 	var messageTextBox = jQuery('[name=message');
 
 	socket.emit('createMessage', {
-		from: "User",
 		text: messageTextBox.val()
 	}, function () {
 		messageTextBox.val('');

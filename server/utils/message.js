@@ -1,5 +1,11 @@
 const moment = require('moment');
 
+var generateRoomName = (user) => {
+	return {
+		roomName
+	}
+};
+
 var generateMessage = (from, text) => {
 	return {
 		from,
@@ -16,4 +22,4 @@ var generateLocationMessage = (from, latitude, longitude) => {
 	};
 };
 
-module.exports = {generateMessage, generateLocationMessage};
+module.exports = {generateMessage, generateLocationMessage, generateRoomName};
