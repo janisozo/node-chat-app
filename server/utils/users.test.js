@@ -60,7 +60,7 @@ describe('Users', () => {
 
 	it('Should not delete an ivalid user by id', () => {
 		var returnedUser = users.removeUser('333');
-		expect(returnedUser).toBe(undefined);
+		expect(returnedUser).toBeFalsy();
 		expect(users.users.length).toBe(3);
 	});
 
